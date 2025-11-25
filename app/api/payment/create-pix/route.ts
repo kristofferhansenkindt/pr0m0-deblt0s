@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 
 const ALLOWPAY_API_URL = "https://api.allowpay.online/functions/v1/transactions"
-const ALLOWPAY_API_KEY = "sk_live_LwoXBBOE79KsRLP4UbsvwNPp9XESbMbr9wzOPUJAepaCwnzH"
+const ALLOWPAY_API_KEY = "sk_live_NJJH7xyFl6IpBZ1vNiOPzmjxd5jmNF7VoXJOcuryYyrdXkMZ"
 
 function generateBasicAuth(apiKey: string): string {
   // AllowPay uses Basic Auth with format: apiKey:password
