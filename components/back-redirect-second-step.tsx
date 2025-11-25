@@ -95,7 +95,7 @@ export function BackRedirectSecondStep() {
     )
   }
 
-  const VALOR_FIXO_DESCONTO = 5.0
+  const VALOR_FIXO_DESCONTO = 67.12
 
   const getValorNumericoComDesconto = () => {
     return VALOR_FIXO_DESCONTO
