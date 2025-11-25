@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Rawline";
+  src: url("/fonts/rawline-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rawline";
+  src: url("/fonts/rawline-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rawline";
+  src: url("/fonts/rawline-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --foreground-rgb: 51, 51, 51;
+  --background-rgb: 245, 245, 245;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: "Rawline", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos específicos para a tela de login do gov.br */
+.govbr-login-button {
+  background-color: #1351b4;
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.govbr-login-button:hover {
+  background-color: #0d47a1;
+}
+
+.govbr-input {
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.govbr-input:focus {
+  border-color: #1351b4;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(19, 81, 180, 0.2);
+}
+
+.govbr-divider {
+  border-top: 1px solid #dddddd;
+  margin: 24px 0;
+}
+
+/* Cores oficiais do governo */
+.gov-blue-dark {
+  color: #071d41;
+}
+
+.gov-blue {
+  color: #1351b4;
+}
+
+.gov-green {
+  color: #06a73c;
+}
+
+.gov-yellow {
+  color: #ffcc29;
+}
+
+/* Estilos para tabelas */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  font-weight: 500;
+}
+
+/* Estilos para formulários */
+input,
+select,
+textarea {
+  font-family: "Rawline", sans-serif;
+}
+
+button {
+  font-family: "Rawline", sans-serif;
+  font-weight: 500;
+}
+
+/* Estilos para links */
+a {
+  color: #1351b4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Custom animations for discount section */
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes bounce-subtle {
+  0%,
+  100% {
+    transform: translateY(0) rotate(12deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(12deg);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-bounce {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
