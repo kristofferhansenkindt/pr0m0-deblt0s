@@ -18,6 +18,20 @@ export async function POST(request: NextRequest) {
 
     const { amount, customerData, vehicleData } = body
 
+    // ✅ VALIDAÇÃO CRÍTICA DO VALOR
+    console.log("💰 [API /create-pix] VALOR RECEBIDO DO FRONTEND:", amount)
+    
+    if (amount !== 67.12) {
+      console.error("❌ [API /create-pix] VALOR INCORRETO! Esperado: 67.12, Recebido:", amount)
+      return NextResponse.json(
+        {
+          success: false,
+          error: `Valor incorreto. Esperado: R$ 67,12, Recebido: R$ ${amount}`,
+        },
+        { status: 400 },
+      )
+    }
+
     if (!amount || !customerData || !vehicleData) {
       console.error("❌ [API /create-pix] Dados incompletos recebidos:", body)
       return NextResponse.json(
@@ -30,6 +44,10 @@ export async function POST(request: NextRequest) {
     }
 
     const webhookUrl = "https://pr0m0-deb1t0s.vercel.app/api/webhook/allowpay"
+
+    // ✅ CONVERSÃO CORRETA DO VALOR
+    const valorEmCentavos = Math.round(amount * 100)
+    console.log("💰 [API /create-pix] Valor em centavos:", valorEmCentavos) // Deve ser 6712
 
     const allowPayPayload = {
       customer: {
@@ -61,11 +79,11 @@ export async function POST(request: NextRequest) {
         {
           title: `Regularização de Débitos - ${vehicleData.placa}`,
           quantity: 1,
-          unitPrice: Math.round(amount * 100),
+          unitPrice: valorEmCentavos, // ✅ 6712 centavos = R$ 67,12
           externalRef: vehicleData.placa,
         },
       ],
-      amount: Math.round(amount * 100),
+      amount: valorEmCentavos, // ✅ 6712 centavos = R$ 67,12
       description: `Pagamento de débitos veiculares - Placa: ${vehicleData.placa}`,
       ip: "127.0.0.1",
       postbackUrl: webhookUrl,
@@ -75,6 +93,8 @@ export async function POST(request: NextRequest) {
     console.log("🔗 [API /create-pix] URL:", ALLOWPAY_API_URL)
     console.log("🔗 [API /create-pix] Webhook URL:", webhookUrl)
     console.log("🔑 [API /create-pix] API Key:", `${ALLOWPAY_API_KEY.substring(0, 15)}...`)
+    console.log("💰 [API /create-pix] Valor em reais: R$", amount)
+    console.log("💰 [API /create-pix] Valor em centavos:", valorEmCentavos)
     console.log("📦 [API /create-pix] Payload:", JSON.stringify(allowPayPayload, null, 2))
 
     const allowPayResponse = await fetch(ALLOWPAY_API_URL, {
