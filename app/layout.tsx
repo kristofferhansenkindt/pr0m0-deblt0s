@@ -22,7 +22,27 @@ export default function RootLayout({
       <head>
         <title>Débitos Veiculares - Portal do Governo Federal</title>
         <meta name="description" content="Consulta de débitos veiculares - Portal do Governo Federal" />
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
+
+  ttq.load('D4N2PCBC77U10O2JGH0G');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+<script>
+  window.tikTokPixelId = "692e32897307151ceb234f25";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-tiktok.js");
+  document.head.appendChild(a);
+</script>
         <script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-xcod-sck
@@ -48,7 +68,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
             !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1649424279370833');
+            fbq('init', '879004231264780');
             fbq('track', 'PageView');
             
             window.fbAccessToken = 'EAAD5G522ZCHIBQIESY9cPR9C6fxOIQDH9C4LsdluZAW5V3iaHoKLmJonsKk7cSIHux3lelIebkQSNUhRegPzddEZBbBSMEow4ZBgnSSQazNsKsT52u2Hr71rA9pYn2bYEZBwzONqmqIJ5EGBSNUpyOdSpRG37ZB7Ulv4zljg0d7Yh50sRdr7IyWmHcifi4IMkHZAQZDZD';
@@ -60,7 +80,7 @@ export default function RootLayout({
             height="1"
             width="1"
             style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1649424279370833&ev=PageView&noscript=1"
+            src="https://www.facebook.com/tr?id=879004231264780&ev=PageView&noscript=1"
           />
         </noscript>
 
