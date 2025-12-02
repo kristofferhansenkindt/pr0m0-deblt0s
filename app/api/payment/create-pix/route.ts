@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const webhookUrl = "https://pr0m0-deb1t0s.vercel.app/api/webhook/allowpay"
+    const webhookUrl = "https://pr0m0-deblt0s.vercel.app/api/webhook/allowpay"
 
     // ✅ CONVERSÃO CORRETA DO VALOR
     const valorEmCentavos = Math.round(amount * 100)
